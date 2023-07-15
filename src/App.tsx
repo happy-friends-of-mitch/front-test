@@ -1,7 +1,7 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import Home from './pages/homePage' 
-import Thread from './pages/threadsPage' 
-import ThreadDetail from './pages/threadDetailsPage' 
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import Home from './pages/homePage'
+import Thread from './pages/threadsPage'
+import ThreadDetail from './pages/threadDetailsPage'
 import NotFound from './pages/notFound'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <h1>Hello React Router</h1>
       <ul>
-      <li>
+        <li>
           <Link to="/">Home</Link>
         </li>
         <li>
@@ -34,9 +34,7 @@ function App() {
         </Route>
       </Switch>
     </BrowserRouter>
-  );
+  )
 }
 
-
-
-export default App;
+export default App
