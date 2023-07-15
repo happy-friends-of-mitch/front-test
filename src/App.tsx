@@ -1,4 +1,8 @@
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import Home from './pages/homePage' 
+import Thread from './pages/threadsPage' 
+import ThreadDetail from './pages/threadDetailsPage' 
+import NotFound from './pages/notFound'
 
 function App() {
   return (
@@ -9,21 +13,21 @@ function App() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/threads">Threads</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/threadDetail">ThreadDetail</Link>
         </li>
       </ul>
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/about">
-          <About />
+        <Route path="/threads">
+          <Thread />
         </Route>
-        <Route path="/contact">
-          <Contact />
+        <Route path="/threadDetail">
+          <ThreadDetail />
         </Route>
         <Route>
           <NotFound />
@@ -33,20 +37,6 @@ function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
-function About() {
-  return <h2>About</h2>;
-}
-
-function Contact() {
-  return <h2>Contact</h2>;
-}
-
-function NotFound() {
-  return <h2>Not Found Page</h2>;
-}
 
 export default App;
