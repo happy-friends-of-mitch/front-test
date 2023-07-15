@@ -4,12 +4,12 @@ function Thread() {
     const handlers = useSwipeable({
         onSwiped: (event) => {
             console.log(event);
-            if (event.dir == "Up") {
+            if (event.dir === "Up") {
                 //左にスワイプしたときに発火するイベント
                 //hogehoge()
                 console.log("Up")
             }
-            if (event.dir == "Down") {
+            if (event.dir === "Down") {
                 //右にスワイプしたときに発火するイベント
                 //hogehoge
                 console.log("Down")
