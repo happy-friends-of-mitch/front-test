@@ -1,7 +1,6 @@
 import { useSwipeable } from "react-swipeable";
 
 function Thread() {
-    const image = "aa"
     const handlers = useSwipeable({
         onSwiped: (event) => {
             console.log(event);
@@ -20,7 +19,7 @@ function Thread() {
     });
     return(
         <div {...handlers}>
-            <h2>{image}</h2>
+            <img src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/200c4a78-9b24-11e6-902c-00163ed833e7/541012800/mega-sync-screenshot.png" alt="サンプル画像" />
         </div>          
     )
 }
