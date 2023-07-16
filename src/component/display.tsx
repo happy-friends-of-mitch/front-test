@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 interface MyComponentProps {
   img_url: string
@@ -10,10 +10,12 @@ export const display: React.FC<MyComponentProps> = ({ img_url, reply_id }) => {
     width: '300px',
     height: 'auto',
   }
+  const [isDisplayed] = useState(reply_id != 0);
+  console.log(reply_id == 0)
 
   return (
     <div>
-      <p>Reply ID: {reply_id}</p>
+      {isDisplayed && <p>{">> "}{reply_id}</p>}
       <img src={img_url} alt="サンプル画像" style={imageStyle} />
     </div>
   )
