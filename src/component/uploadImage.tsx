@@ -27,12 +27,32 @@ const FileUploadComponent: React.FC<IdComponentProps> = ({
         const base64Data = fileData.split(',')[1] // Base64データ部分を取得
         const fileExtension = selectedFile.name.split('.').pop() // 拡張子を取得
 
-        const jsonData = {
-          base64: base64Data,
-          extension: fileExtension,
-          thread_id: thread_id,
-          reply_id: reply_id,
-        }
+        const myHeaders = new Headers()
+        myHeaders.append('Content-Type', 'application/json')
+
+        const jsonData = JSON.stringify({
+          "thread_id": thread_id,
+          "reply_id": reply_id,
+          "fileType": fileExtension,
+          "base64": base64Data,
+
+          // "reply_id": 1,
+        });
+
+        const requestOptions: RequestInit = {
+          method: 'POST',
+          headers: myHeaders,
+          body: jsonData,
+          redirect: 'follow',
+        };
+
+        fetch(
+          "https://megatter-func.azurewebsites.net/api/TestTrigger?",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => console.log(result))
+          .catch((error) => console.log('error', error));
 
         console.log('JSON data:', jsonData)
         // ここでJSONデータの利用や送信処理を行う
