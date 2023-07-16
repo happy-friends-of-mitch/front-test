@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import FooterNavigation from './component/footerNavigation'
 import Home from './pages/homePage'
 import ThreadDetail from './pages/threadDetailsPage'
@@ -14,9 +14,10 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/reel" component={QuiltedImageList} />
-          <Route path="/threads" component={ThreadDetail} />
+          <Route exact path="/reel" component={QuiltedImageList} />
+          <Route exact path="/threads" component={ThreadDetail} />
           <Route component={NotFound} />
+          <Route render={() => (<Redirect to="/" />)} />
         </Switch>
         <FooterNavigation />
       </Router>
