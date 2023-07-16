@@ -1,8 +1,16 @@
 import MyComponentProps from '../component/display'
 import FileUploadComponent from '../component/uploadImage'
 import { getData } from '../getData/getData'
+import { styled } from '@mui/system'
+import Paper from '@mui/material/Paper'
+
+const BottomButton = styled(FileUploadComponent)({
+  position: 'fixed',
+  top: 0, 
+})
 
 function ThreadDetail() {
+
   const data = getData()
 
   const serializedJson = JSON.stringify(data)
@@ -10,12 +18,14 @@ function ThreadDetail() {
   console.log(parsedJson[0].reply_id)
 
   return (
-    <div>
+    <div style={{marginBottom:'56px',padding:0}}>
       {parsedJson[0].thread_name}
       {data.map((data) => (
-        <MyComponentProps img_url={data.img_url} reply_id={data.reply_id} />
+        <Paper>
+          <MyComponentProps img_url={data.img_url} reply_id={data.reply_id} />
+          <BottomButton thread_id={parsedJson[0].thread_id} reply_id={0} />
+        </Paper>
       ))}
-      <FileUploadComponent thread_id={parsedJson[0].thread_id} reply_id={0} />
     </div>
   )
 }

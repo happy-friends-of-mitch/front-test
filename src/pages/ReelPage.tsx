@@ -3,7 +3,6 @@ import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import IconButton from '@mui/material/IconButton'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
-import MyComponentProps from '../component/display'
 import { getData } from '../getData/getData'
 
 function srcset(
@@ -35,13 +34,14 @@ export default function CustomImageList() {
         height: '100%',
         // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
         transform: 'translateZ(0)',
+        marginBottom: '56px'
       }}
       rowHeight={200}
       gap={1}
     >
       {data.map((item) => {
         const cols = item.img_url ? 2 : 1
-        const rows = item.thread_id ? 2 : 1
+        const rows = item.img_url ? 2: 1
 
         return (
           <ImageListItem key={item.img_url} cols={cols} rows={rows}>
