@@ -2,7 +2,6 @@ import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import IconButton from '@mui/material/IconButton'
-import StarBorderIcon from '@mui/icons-material/StarBorder'
 import { getData } from '../getData/getData'
 
 function srcset(
@@ -36,12 +35,13 @@ export default function CustomImageList() {
         transform: 'translateZ(0)',
         marginBottom: '56px'
       }}
-      rowHeight={200}
+      rowHeight={164}
       gap={1}
+      cols={3}
     >
       {data.map((item) => {
-        const cols = item.img_url ? 2 : 1
-        const rows = item.img_url ? 2: 1
+        const cols = 1
+        const rows = 1
 
         return (
           <ImageListItem key={item.img_url} cols={cols} rows={rows}>
@@ -63,7 +63,6 @@ export default function CustomImageList() {
                   sx={{ color: 'white' }}
                   aria-label={`star ${item.thread_name}`}
                 >
-                  <StarBorderIcon />
                 </IconButton>
               }
               actionPosition="left"
