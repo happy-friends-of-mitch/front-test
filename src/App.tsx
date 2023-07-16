@@ -11,8 +11,8 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/threads" component={Thread} />
-        <Route path="/thread" component={ThreadDetail} />
+        <Route path="/reel" component={Thread} />
+        <Route path="/threads" component={ThreadDetail} />
         <Route path="/test" component={QuiltedImageList} />
         <Route component={NotFound} />
       </Switch>
