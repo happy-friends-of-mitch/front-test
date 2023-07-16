@@ -23,13 +23,13 @@ const FooterNavigation = () => {
             />
             <BottomNavigationAction 
                 component={Link}
-                to='/threads'
+                to='/reel'
                 label="threads"
                 icon={<CollectionsIcon />}
             />
             <BottomNavigationAction 
                 component={Link}
-                to='thread'
+                to='threads'
                 label="thread"
                 icon={<NoteIcon />}
             />
