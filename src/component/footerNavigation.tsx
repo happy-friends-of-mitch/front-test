@@ -24,13 +24,13 @@ const FooterNavigation = () => {
         <BottomNavigationAction
           component={Link}
           to="/reel"
-          label="threads"
+          label="Threads"
           icon={<CollectionsIcon />}
         />
         <BottomNavigationAction
           component={Link}
           to="threads"
-          label="thread"
+          label="Thread"
           icon={<NoteIcon />}
         />
       </FooterNavStyled>

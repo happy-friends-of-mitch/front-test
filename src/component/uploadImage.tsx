@@ -1,4 +1,8 @@
 import React, { ChangeEvent, useState } from 'react'
+import SendIcon from '@mui/icons-material/Send'
+import {InputAdornment, Input, IconButton } from '@mui/material';
+import MyButton from './myBotton';
+
 
 interface IdComponentProps {
   thread_id: number
@@ -66,10 +70,22 @@ const FileUploadComponent: React.FC<IdComponentProps> = ({
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload} disabled={!selectedFile}>
+      <Input
+        type="file" 
+        onChange={handleFileChange}
+        placeholder='Button'
+        startAdornment={
+          <InputAdornment position='start'>
+            <IconButton>
+              <SendIcon />
+            </IconButton>
+          </InputAdornment>
+        } 
+      />
+      {/* <Button onClick={handleUpload} disabled={!selectedFile} variant="contained" endIcon={<SendIcon />}>
         Upload
-      </button>
+      </Button> */}
+      <MyButton text="Upload" onClick={handleUpload} />
     </div>
   )
 }
