@@ -1,9 +1,8 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import FooterNavigation from "./component/FooterNavigation";
-import Home from "./pages/homePage";
-import Thread from "./pages/threadsPage";
-import ThreadDetail from "./pages/threadDetailsPage";
-import NotFound from "./pages/notFound";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import FooterNavigation from './component/FooterNavigation'
+import Home from './pages/homePage'
+import ThreadDetail from './pages/threadDetailsPage'
+import NotFound from './pages/notFound'
 import QuiltedImageList from './pages/testPageScroll'
 
 const App = () => {
@@ -11,7 +10,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/reel" component={Thread} />
+        <Route path="/reel" component={QuiltedImageList} />
         <Route path="/threads" component={ThreadDetail} />
         <Route path="/test" component={QuiltedImageList} />
         <Route component={NotFound} />
@@ -21,4 +20,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App

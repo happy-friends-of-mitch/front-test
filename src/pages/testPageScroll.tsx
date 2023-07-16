@@ -1,26 +1,32 @@
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ImageList from '@mui/material/ImageList'
+import ImageListItem from '@mui/material/ImageListItem'
+import ImageListItemBar from '@mui/material/ImageListItemBar'
+import IconButton from '@mui/material/IconButton'
+import StarBorderIcon from '@mui/icons-material/StarBorder'
 import MyComponentProps from '../component/display'
 import { getData } from '../getData/getData'
 
-function srcset(image: string, width: number, height: number, rows = 1, cols = 1) {
+function srcset(
+  image: string,
+  width: number,
+  height: number,
+  rows = 1,
+  cols = 1
+) {
   return {
     src: `${image}?w=${width * cols}&h=${height * rows}&fit=crop&auto=format`,
     srcSet: `${image}?w=${width * cols}&h=${
       height * rows
     }&fit=crop&auto=format&dpr=2 2x`,
-  };
+  }
 }
 
 export default function CustomImageList() {
-    const data = getData()
+  const data = getData()
 
-    const serializedJson = JSON.stringify(data)
-    const parsedJson = JSON.parse(serializedJson)
-    console.log(parsedJson)
+  const serializedJson = JSON.stringify(data)
+  const parsedJson = JSON.parse(serializedJson)
+  console.log(parsedJson)
 
   return (
     <ImageList
@@ -34,8 +40,8 @@ export default function CustomImageList() {
       gap={1}
     >
       {data.map((item) => {
-        const cols = item.img_url ? 2 : 1;
-        const rows = item.thread_id ? 2 : 1;
+        const cols = item.img_url ? 2 : 1
+        const rows = item.thread_id ? 2 : 1
 
         return (
           <ImageListItem key={item.img_url} cols={cols} rows={rows}>
@@ -63,10 +69,10 @@ export default function CustomImageList() {
               actionPosition="left"
             />
           </ImageListItem>
-        );
+        )
       })}
     </ImageList>
-  );
+  )
 }
 
 const itemData = [
@@ -132,4 +138,4 @@ const itemData = [
     title: 'Bike',
     author: '@southside_customs',
   },
-];
+]
