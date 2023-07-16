@@ -1,12 +1,17 @@
 import React, { ChangeEvent, useState } from "react";
 
-const FileUploadComponent: React.FC = () => {
+interface IdComponentProps {
+    thread_id: number
+    reply_id: number
+}
+
+const FileUploadComponent: React.FC<IdComponentProps> = ({ thread_id, reply_id }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    setSelectedFile(file || null);
-  };
+  function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
+        const file = event.target.files?.[0];
+        setSelectedFile(file || null);
+    }
 
   const handleUpload = () => {
     if (selectedFile) {
@@ -21,7 +26,9 @@ const FileUploadComponent: React.FC = () => {
 
         const jsonData = {
           base64: base64Data,
-          extension: fileExtension
+          extension: fileExtension,
+          thread_id: thread_id,
+          reply_id: reply_id
         };
 
         console.log("JSON data:", jsonData);
@@ -40,7 +47,6 @@ const FileUploadComponent: React.FC = () => {
       <button onClick={handleUpload} disabled={!selectedFile}>
         Upload
       </button>
-        <h1>aaaaaaaaaaaaaaaa</h1>
     </div>
   );
 };
