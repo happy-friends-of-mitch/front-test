@@ -1,40 +1,22 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
-import Home from './pages/homePage'
-import Thread from './pages/threadsPage'
-import ThreadDetail from './pages/threadDetailsPage'
-import NotFound from './pages/notFound'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import FooterNavigation from "./component/FooterNavigation";
+import Home from "./pages/homePage";
+import Thread from "./pages/threadsPage";
+import ThreadDetail from "./pages/threadDetailsPage";
+import NotFound from "./pages/notFound";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <h1>Hello React Router</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/threads">Threads</Link>
-        </li>
-        <li>
-          <Link to="/threadDetail">ThreadDetail</Link>
-        </li>
-      </ul>
+    <Router>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/threads">
-          <Thread />
-        </Route>
-        <Route path="/threadDetail">
-          <ThreadDetail />
-        </Route>
-        <Route>
-          <NotFound />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route path="/threads" component={Thread} />
+        <Route path="/thread" component={ThreadDetail} />
+        <Route component={NotFound} />
       </Switch>
-    </BrowserRouter>
+      <FooterNavigation />
+    </Router>
   )
 }
 
-export default App
+export default App;

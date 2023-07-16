@@ -1,5 +1,15 @@
 function Home() {
-  return <h2>Home</h2>
+  return (
+    <div>
+      <h1>
+        Home Hello
+        NextStage
+      </h1>
+      <p>
+        next
+      </p>
+    </div>
+  )
 }
 
 export default Home
