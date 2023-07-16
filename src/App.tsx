@@ -4,6 +4,7 @@ import Home from "./pages/homePage";
 import Thread from "./pages/threadsPage";
 import ThreadDetail from "./pages/threadDetailsPage";
 import NotFound from "./pages/notFound";
+import QuiltedImageList from './pages/testPageScroll'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route path="/threads" component={Thread} />
         <Route path="/thread" component={ThreadDetail} />
+        <Route path="/test" component={QuiltedImageList} />
         <Route component={NotFound} />
       </Switch>
       <FooterNavigation />
