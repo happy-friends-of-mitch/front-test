@@ -8,7 +8,7 @@ function Thread() {
   const serializedJson = JSON.stringify(data)
   const parsedJson = JSON.parse(serializedJson)
   console.log(parsedJson)
-  
+
   const handlers = useSwipeable({
     onSwiped: (event) => {
       console.log(event)
@@ -28,7 +28,7 @@ function Thread() {
   return (
     <div {...handlers}>
       {data.map((data) => (
-      <MycomponentProps img_url={data.img_url} reply_id={data.reply_id} />
+        <MycomponentProps img_url={data.img_url} reply_id={data.reply_id} />
       ))}
     </div>
   )
