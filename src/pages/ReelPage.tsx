@@ -19,7 +19,7 @@ function srcset(
   }
 }
 
-export default function CustomImageList() {
+export default function Reel() {
   const data = getData()
 
   const serializedJson = JSON.stringify(data)

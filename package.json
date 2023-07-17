@@ -19,7 +19,7 @@
     "emotion-reset": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "v5",
+    "react-router-dom": "6",
     "react-scripts": "5.0.1",
     "react-swipeable": "^7.0.1",
     "styled-components": "^6.0.4",

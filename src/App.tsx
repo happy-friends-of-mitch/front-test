@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import FooterNavigation from './component/footerNavigation'
 import Home from './pages/homePage'
-import ThreadDetail from './pages/threadDetailsPage'
+import Thread from './pages/threadDetailsPage'
 import NotFound from './pages/notFoundPage'
-import QuiltedImageList from './pages/ReelPage'
+import Reel from './pages/ReelPage'
 import CssBaseLine from '@mui/material/CssBaseline'
 
 
@@ -12,12 +12,13 @@ const App = () => {
     <>
     <CssBaseLine />
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/reel" component={QuiltedImageList} />
-          <Route path="/threads" component={ThreadDetail} />
-          <Route component={NotFound} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/reel" element={<Reel />} >
+            <Route path="thread" element={<Thread />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
         <FooterNavigation />
       </Router>
     </>

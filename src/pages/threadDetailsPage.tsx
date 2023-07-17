@@ -9,7 +9,7 @@ const BottomButton = styled(FileUploadComponent)({
   top: 0, 
 })
 
-function ThreadDetail() {
+function Thread() {
 
   const data = getData()
 
@@ -30,4 +30,4 @@ function ThreadDetail() {
   )
 }
 
-export default ThreadDetail
+export default Thread
