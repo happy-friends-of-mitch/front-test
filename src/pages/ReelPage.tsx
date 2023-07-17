@@ -28,7 +28,8 @@ export default function Reel() {
   console.log(parsedJson)
 
   const handleClick = () => {
-    window.location.href = '/thread';
+    sessionStorage.setItem('path', location.pathname);
+    location.replace('./thread');
   }
 
   return (
