@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import List from '@mui/material/List';
+import { ListItem, ListItemText } from '@mui/material';
+import Card from '@mui/material/Card'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 interface Thread {
   thread_id: number
@@ -32,13 +36,23 @@ const ThreadList = () => {
   return (
     <div>
       <h1>スレッド一覧</h1>
-      <ul>
+      <List>
         {threads.map((thread) => (
-          <Link to="/thread">
-            <li key={thread.thread_id}>{thread.thread_name}</li>
+          <Link to="/thread"
+            style={{color:'black', textDecoration:'none', margin: '30%', textAlign: 'center'}}
+          >
+            <Card>
+            <ListItem 
+                key={thread.thread_id}
+                style={{margin: '2%, auto, 2%, auto'}}
+            >
+                <OpenInNewIcon />
+                {thread.thread_name}
+                </ListItem>
+            </Card>
           </Link>
         ))}
-      </ul>
+      </List>
     </div>
   )
 }
