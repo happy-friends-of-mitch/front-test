@@ -3,7 +3,7 @@ import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import IconButton from '@mui/material/IconButton'
 import { getData } from '../getData/getData'
-import { Outlet } from 'react-router'
+import Link  from 'react-router-dom'
 
 function srcset(
   image: string,
@@ -26,6 +26,10 @@ export default function Reel() {
   const serializedJson = JSON.stringify(data)
   const parsedJson = JSON.parse(serializedJson)
   console.log(parsedJson)
+
+  const handleClick = () => {
+    window.location.href = '/thread';
+  }
 
   return (
     <ImageList
@@ -51,6 +55,7 @@ export default function Reel() {
               {...srcset(item.img_url, 250, 200, rows, cols)}
               alt={item.thread_name}
               loading="lazy"
+              onClick={handleClick}
             />
             <ImageListItemBar
               sx={{
@@ -69,7 +74,6 @@ export default function Reel() {
               }
               actionPosition="left"
             />
-            
           </ImageListItem>
           </>
         )
