@@ -6,11 +6,10 @@ import Paper from '@mui/material/Paper'
 
 const BottomButton = styled(FileUploadComponent)({
   position: 'fixed',
-  top: 0, 
+  top: 0,
 })
 
 function Thread() {
-
   const data = getData()
 
   const serializedJson = JSON.stringify(data)
@@ -19,7 +18,7 @@ function Thread() {
 
   return (
     <>
-      <div style={{marginBottom:'56px',padding:0}}>
+      <div style={{ marginBottom: '56px', padding: 0 }}>
         {/* {data[0].thread_name} */}
         {data.map((data) => (
           <Paper>

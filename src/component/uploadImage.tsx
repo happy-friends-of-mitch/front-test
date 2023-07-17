@@ -1,8 +1,7 @@
 import React, { ChangeEvent, useState } from 'react'
 import SendIcon from '@mui/icons-material/Send'
-import {InputAdornment, Input, IconButton } from '@mui/material';
-import MyButton from './myBotton';
-
+import { InputAdornment, Input, IconButton } from '@mui/material'
+import MyButton from './myBotton'
 
 interface IdComponentProps {
   thread_id: number
@@ -35,28 +34,28 @@ const FileUploadComponent: React.FC<IdComponentProps> = ({
         myHeaders.append('Content-Type', 'application/json')
 
         const jsonData = JSON.stringify({
-          "thread_id": thread_id,
-          "reply_id": reply_id,
-          "fileType": fileExtension,
-          "base64": base64Data,
+          thread_id: thread_id,
+          reply_id: reply_id,
+          fileType: fileExtension,
+          base64: base64Data,
 
           // "reply_id": 1,
-        });
+        })
 
         const requestOptions: RequestInit = {
           method: 'POST',
           headers: myHeaders,
           body: jsonData,
           redirect: 'follow',
-        };
+        }
 
         fetch(
-          "https://megatter-func.azurewebsites.net/api/UploadBlobTrigger",
+          'https://megatter-func.azurewebsites.net/api/UploadBlobTrigger',
           requestOptions
         )
           .then((response) => response.text())
           .then((result) => console.log(result))
-          .catch((error) => console.log('error', error));
+          .catch((error) => console.log('error', error))
 
         console.log('JSON data:', jsonData)
         // ここでJSONデータの利用や送信処理を行う
@@ -71,16 +70,16 @@ const FileUploadComponent: React.FC<IdComponentProps> = ({
   return (
     <div>
       <Input
-        type="file" 
+        type="file"
         onChange={handleFileChange}
-        placeholder='Button'
+        placeholder="Button"
         startAdornment={
-          <InputAdornment position='start'>
+          <InputAdornment position="start">
             <IconButton>
               <SendIcon />
             </IconButton>
           </InputAdornment>
-        } 
+        }
       />
       {/* <Button onClick={handleUpload} disabled={!selectedFile} variant="contained" endIcon={<SendIcon />}>
         Upload

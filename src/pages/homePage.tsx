@@ -1,5 +1,4 @@
-
-import ThreadList from '../component/showName';
+import ThreadList from '../component/showName'
 
 function Home() {
   return (

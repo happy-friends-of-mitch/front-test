@@ -3,7 +3,7 @@ import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import IconButton from '@mui/material/IconButton'
 import { getData } from '../getData/getData'
-import Link  from 'react-router-dom'
+import Link from 'react-router-dom'
 
 function srcset(
   image: string,
@@ -28,8 +28,8 @@ export default function Reel() {
   console.log(parsedJson)
 
   const handleClick = () => {
-    sessionStorage.setItem('path', location.pathname);
-    location.replace('./thread');
+    sessionStorage.setItem('path', location.pathname)
+    location.replace('./thread')
   }
 
   return (
@@ -39,7 +39,7 @@ export default function Reel() {
         height: '100%',
         // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
         transform: 'translateZ(0)',
-        marginBottom: '56px'
+        marginBottom: '56px',
       }}
       rowHeight={164}
       gap={1}
@@ -51,31 +51,30 @@ export default function Reel() {
 
         return (
           <>
-          <ImageListItem key={item.img_url} cols={cols} rows={rows}>
-            <img
-              {...srcset(item.img_url, 250, 200, rows, cols)}
-              alt={item.thread_name}
-              loading="lazy"
-              onClick={handleClick}
-            />
-            <ImageListItemBar
-              sx={{
-                background:
-                  'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                  'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-              }}
-              title={item.thread_name}
-              position="top"
-              actionIcon={
-                <IconButton
-                  sx={{ color: 'white' }}
-                  aria-label={`star ${item.thread_name}`}
-                >
-                </IconButton>
-              }
-              actionPosition="left"
-            />
-          </ImageListItem>
+            <ImageListItem key={item.img_url} cols={cols} rows={rows}>
+              <img
+                {...srcset(item.img_url, 250, 200, rows, cols)}
+                alt={item.thread_name}
+                loading="lazy"
+                onClick={handleClick}
+              />
+              <ImageListItemBar
+                sx={{
+                  background:
+                    'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                    'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                }}
+                title={item.thread_name}
+                position="top"
+                actionIcon={
+                  <IconButton
+                    sx={{ color: 'white' }}
+                    aria-label={`star ${item.thread_name}`}
+                  ></IconButton>
+                }
+                actionPosition="left"
+              />
+            </ImageListItem>
           </>
         )
       })}

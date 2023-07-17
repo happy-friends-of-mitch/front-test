@@ -6,11 +6,10 @@ import NotFound from './pages/notFoundPage'
 import Reel from './pages/ReelPage'
 import CssBaseLine from '@mui/material/CssBaseline'
 
-
 const App = () => {
   return (
     <>
-    <CssBaseLine />
+      <CssBaseLine />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
