@@ -14,9 +14,8 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/reel" element={<Reel />} >
-            <Route path="thread" element={<Thread />} />
-          </Route>
+          <Route path="/reel" element={<Reel />} />
+          <Route path="/thread" element={<Thread />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <FooterNavigation />
