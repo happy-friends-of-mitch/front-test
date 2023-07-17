@@ -51,7 +51,7 @@ const FileUploadComponent: React.FC<IdComponentProps> = ({
         };
 
         fetch(
-          "https://megatter-func.azurewebsites.net/api/TestTrigger?",
+          "https://megatter-func.azurewebsites.net/api/UploadBlobTrigger",
           requestOptions
         )
           .then((response) => response.text())
