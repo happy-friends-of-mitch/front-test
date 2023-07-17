@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Thread {
     thread_id: number;
@@ -28,11 +29,13 @@ const ThreadList = () => {
     return (
         <div>
             <h1>スレッド一覧</h1>
-            <ul>
-                {threads.map((thread) => (
-                    <li key={thread.thread_id}>{thread.thread_name}</li>
-                ))}
-            </ul>
+            <Link to="/thread">
+                <ul>
+                    {threads.map((thread) => (
+                        <li key={thread.thread_id}>{thread.thread_name}</li>
+                    ))}
+                </ul>
+            </Link>
         </div>
     );
 };
