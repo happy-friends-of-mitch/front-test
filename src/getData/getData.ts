@@ -1,18 +1,31 @@
+import { useEffect, useState } from "react";
+
+interface Thread {
+  img_url: string;
+  reply_id: number;
+  thread_id: number;
+  thread_name: string;
+}
+
 export const getData = () => {
-  return [
-    {
-      img_url:
-        'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/200c4a78-9b24-11e6-902c-00163ed833e7/541012800/mega-sync-screenshot.png',
-      reply_id: 123456789,
-      thread_id: 987654321,
-      thread_name: 'Thread A',
-    },
-    {
-      img_url:
-        'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/200c4a78-9b24-11e6-902c-00163ed833e7/541012800/mega-sync-screenshot.png',
-      reply_id: 543210987,
-      thread_id: 123456789,
-      thread_name: 'Thread B',
-    },
-  ]
+  const [threads, setThreads] = useState<Thread[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+          const response = await fetch("https://megatter-func.azurewebsites.net/api/GetReelTrigger?code=3qROsI3SfE1CYAZBZMfKppmPC2gsZ-nzICNXRF0OkFgUAzFuIS2OeA==", {
+              method: 'GET',
+              redirect: 'follow'
+          });
+          const data = await response.json();
+          setThreads(data);
+      } catch (error) {
+          console.log('error', error);
+      }
+  };
+
+    fetchData();
+  }, []);
+
+  return (threads)
 }
