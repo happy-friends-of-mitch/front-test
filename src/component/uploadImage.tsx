@@ -65,6 +65,7 @@ const FileUploadComponent: React.FC<IdComponentProps> = ({
         // setSelectedFile(null);
       }
       reader.readAsDataURL(selectedFile)
+      alert("アップロード完了")
     }
   }
 
