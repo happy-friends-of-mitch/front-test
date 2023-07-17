@@ -74,6 +74,7 @@ export default function Reel() {
           </>
         )
       })}
+      <Outlet />
     </ImageList>
   )
 }
