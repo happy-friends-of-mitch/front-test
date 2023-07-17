@@ -4,6 +4,7 @@ import List from '@mui/material/List';
 import { ListItem, ListItemText } from '@mui/material';
 import Card from '@mui/material/Card'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import CardHeader from '@mui/material/CardHeader';
 
 interface Thread {
   thread_id: number
@@ -35,8 +36,10 @@ const ThreadList = () => {
 
   return (
     <div>
-      <h1>スレッド一覧</h1>
-      <List>
+      <h2>スレッド一覧</h2> 
+      <List
+        style={{ marginBottom:"56px"}}
+      >
         {threads.map((thread) => (
           <Link to="/thread"
             style={{color:'black', textDecoration:'none', margin: '30%', textAlign: 'center'}}
