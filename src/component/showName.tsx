@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ListItemButton, ListItemText } from '@mui/material';
 
 interface Thread {
     thread_id: number;
@@ -30,7 +31,9 @@ const ThreadList = () => {
             <h1>スレッド一覧</h1>
             <ul>
                 {threads.map((thread) => (
-                    <li key={thread.thread_id}>{thread.thread_name}</li>
+                    <ListItemButton key={thread.thread_id} style={{ textAlign: 'center' }}>
+                        <ListItemText primary={thread.thread_name} />
+                    </ListItemButton>
                 ))}
             </ul>
         </div>
