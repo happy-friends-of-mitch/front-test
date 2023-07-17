@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import FooterNavigation from './component/footerNavigation'
 import Home from './pages/homePage'
-import Thread from './pages/threadDetailsPage'
+import Thread from './pages/threadPage'
 import NotFound from './pages/notFoundPage'
 import Reel from './pages/ReelPage'
 import CssBaseLine from '@mui/material/CssBaseline'

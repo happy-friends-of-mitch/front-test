@@ -29,7 +29,7 @@ const FooterNavigation = () => {
         />
         <BottomNavigationAction
           component={Link}
-          to="threads"
+          to="/reel/thread"
           label="Thread"
           icon={<NoteIcon />}
         />

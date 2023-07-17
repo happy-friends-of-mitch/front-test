@@ -3,6 +3,7 @@ import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import IconButton from '@mui/material/IconButton'
 import { getData } from '../getData/getData'
+import { Outlet } from 'react-router'
 
 function srcset(
   image: string,
@@ -44,6 +45,7 @@ export default function Reel() {
         const rows = 1
 
         return (
+          <>
           <ImageListItem key={item.img_url} cols={cols} rows={rows}>
             <img
               {...srcset(item.img_url, 250, 200, rows, cols)}
@@ -67,7 +69,9 @@ export default function Reel() {
               }
               actionPosition="left"
             />
+            
           </ImageListItem>
+          </>
         )
       })}
     </ImageList>

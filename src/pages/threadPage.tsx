@@ -18,15 +18,17 @@ function Thread() {
   console.log(parsedJson[0].reply_id)
 
   return (
-    <div style={{marginBottom:'56px',padding:0}}>
-      {parsedJson[0].thread_name}
-      {data.map((data) => (
-        <Paper>
-          <MyComponentProps img_url={data.img_url} reply_id={data.reply_id} />
-          <BottomButton thread_id={parsedJson[0].thread_id} reply_id={0} />
-        </Paper>
-      ))}
-    </div>
+    <>
+      <div style={{marginBottom:'56px',padding:0}}>
+        {parsedJson[0].thread_name}
+        {data.map((data) => (
+          <Paper>
+            <MyComponentProps img_url={data.img_url} reply_id={data.reply_id} />
+            <BottomButton thread_id={parsedJson[0].thread_id} reply_id={0} />
+          </Paper>
+        ))}
+      </div>
+    </>
   )
 }
 
