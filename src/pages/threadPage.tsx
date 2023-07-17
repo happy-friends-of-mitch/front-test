@@ -15,12 +15,12 @@ function Thread() {
 
   const serializedJson = JSON.stringify(data)
   const parsedJson = JSON.parse(serializedJson)
-  console.log(parsedJson[0].reply_id)
+  console.log(parsedJson)
 
   return (
     <>
       <div style={{marginBottom:'56px',padding:0}}>
-        {parsedJson[0].thread_name}
+        {/* {data[0].thread_name} */}
         {data.map((data) => (
           <Paper>
             <MyComponentProps img_url={data.img_url} reply_id={data.reply_id} />
